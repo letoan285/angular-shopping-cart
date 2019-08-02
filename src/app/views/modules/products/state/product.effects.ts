@@ -14,7 +14,7 @@ export class ProductEffect {
     ){}
 
     @Effect()
-    loadAllProducts$: Observable<Action> = this.actions$.pipe(
+    loadProducts$: Observable<Action> = this.actions$.pipe(
         ofType<productActions.LoadProducts>(
             productActions.ProductActionTypes.LOAD_PRODUCTS
         ),
