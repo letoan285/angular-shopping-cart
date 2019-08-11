@@ -45,6 +45,49 @@ export function productReducer(state = initialState, action: productAction.Actio
                 loaded: false
             }
         }
+
+        case productAction.ProductActionTypes.CREATE_PRODUCT_SUCCESS: {
+           return productAdapter.addOne(action.payload, {
+               ...state,
+               selectedProductId: action.payload.id
+           });
+        }
+        case productAction.ProductActionTypes.CREATE_PRODUCT_FAIL: {
+            return {
+                ...state,
+                error: action.payload
+            };
+        }
+        case productAction.ProductActionTypes.DELETE_PRODUCT_SUCCESS: {
+            return productAdapter.removeOne(action.payload, state);
+        }
+        case productAction.ProductActionTypes.DELETE_PRODUCT_FAIL: {
+            return {
+                ...state,
+                error: action.payload
+            }
+        }
+        case productAction.ProductActionTypes.LOAD_PRODUCT_SUCCESS: {
+            return productAdapter.addOne(action.payload, {
+                ...state,
+                selectedProductId: action.payload.id
+            });
+        }
+        case productAction.ProductActionTypes.LOAD_PRODUCT_FAIL: {
+            return {
+                ...state,
+                error: action.payload
+            }
+        }
+        case productAction.ProductActionTypes.UPDATE_PRODUCT_SUCCESS: {
+            return productAdapter.updateOne(action.payload, state);
+        }
+        case productAction.ProductActionTypes.UPDATE_PRODUCT_FAIL: {
+            return {
+                ...state,
+                error: action.payload
+            }
+        }
         default: {
             return state;
         }

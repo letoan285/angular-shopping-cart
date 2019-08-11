@@ -35,67 +35,67 @@ export class LoadProductsSuccess implements Action {
 
 export class LoadProductsFail implements Action {
     readonly type = ProductActionTypes.LOAD_PRODUCTS_FAIL
-    constructor(private payload: string){}
+    constructor(public payload: string){}
 }
 
 export class LoadProduct implements Action {
     readonly type = ProductActionTypes.LOAD_PRODUCT
-    constructor(private payload: number){}
+    constructor(public payload: number){}
 }
 
 export class LoadProductSuccess implements Action {
     readonly type = ProductActionTypes.LOAD_PRODUCT_SUCCESS
-    constructor(private payload: Product){}
+    constructor(public payload: Product){}
 }
 
 export class LoadProductFail implements Action {
     readonly type = ProductActionTypes.LOAD_PRODUCT_FAIL
-    constructor(private payload: string){}
+    constructor(public payload: string){}
 }
 
 export class CreateProduct implements Action {
     readonly type = ProductActionTypes.CREATE_PRODUCT
-    constructor(private payload: Product){}
+    constructor(public payload: Product){}
 }
 
 export class CreateProductSuccess implements Action {
     readonly type = ProductActionTypes.CREATE_PRODUCT_SUCCESS
-    constructor(private payload: any){}
+    constructor(public payload: any){}
 }
 
 export class CreateProductFail implements Action {
     readonly type = ProductActionTypes.CREATE_PRODUCT_FAIL
-    constructor(private payload: string){}
+    constructor(public payload: string){}
 }
 
 export class UpdateProduct implements Action {
     readonly type = ProductActionTypes.UPDATE_PRODUCT
-    constructor(private payload: Product){}
+    constructor(public payload: Product){}
 }
 
 export class UpdateProductSuccess implements Action {
     readonly type = ProductActionTypes.UPDATE_PRODUCT_SUCCESS
-    constructor(private payload: Update<Product>){}
+    constructor(public payload: Update<Product>){}
 }
 
 export class UpdateProductFail implements Action {
     readonly type = ProductActionTypes.UPDATE_PRODUCT_FAIL
-    constructor(private payload: string){}
+    constructor(public payload: string){}
 }
 
 export class DeleteProduct implements Action {
     readonly type = ProductActionTypes.DELETE_PRODUCT
-    constructor(private payload: number){}
+    constructor(public payload: number){}
 }
 
 export class DeletProductSuccess implements Action {
     readonly type = ProductActionTypes.DELETE_PRODUCT_SUCCESS
-    constructor(private payload: number){}
+    constructor(public payload: number){}
 }
 
 export class DeleteProductFail implements Action {
     readonly type = ProductActionTypes.DELETE_PRODUCT_FAIL
-    constructor(private payload: string){}
+    constructor(public payload: string){}
 }
 
 export type Action =  LoadProducts 

@@ -2,7 +2,9 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3>Product List</h3>
+                <strong>Product List</strong>
+                <span class="float-right"><a class="btn btn-sm btn-success" routerLink="/products/add">Add New</a></span>
+
             </div>
             <div class="card-body">
                 <table class="table table-bordered">
@@ -11,6 +13,7 @@
                         <th>STT</th>
                         <th>Ten Post</th>
                         <th>Noi dung</th>
+                        <th>Thao Tac</th>
                     </tr>
                    </thead>
                    <tbody>
@@ -18,6 +21,11 @@
                            <td>{{i+1}}</td>
                            <td>{{product.name}}</td>
                            <td>{{product.description}}</td>
+                           <td>
+                               <a class="btn btn-sm btn-info" href=""><i class="fa fa-eye"></i></a>
+                               <a class="btn btn-sm btn-warning" [routerLink]="['/products/edit', product.id]"><i class="fa fa-pencil"></i></a>
+                               <a class="btn btn-sm btn-danger" (click)="deleteProduct(product)" href="javascript:;"><i class="fa fa-trash"></i></a>
+                           </td>
                        </tr>
                    </tbody>
                 </table>

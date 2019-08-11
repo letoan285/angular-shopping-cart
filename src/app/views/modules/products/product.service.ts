@@ -18,7 +18,15 @@ export class ProductService {
   public getProduct(id: number): Observable<Product>{
     return this.http.get<Product>(`${environment.baseUrl}/products/${id}`);
   }
-  public createProduct(){}
-  public updateProduct(){}
-  public deleteProduct(){}
+  public createProduct(product: Product){
+    return this.http.post<Product>(`${environment.baseUrl}/products`, product);
+  }
+
+  public deleteProduct(id: number){
+    return this.http.delete(`${environment.baseUrl}/products/${id}`);
+  }
+
+  public updateProduct(product: Product){
+    return this.http.put<Product>(`${environment.baseUrl}/products/${product.id}`, product);
+  }
 }

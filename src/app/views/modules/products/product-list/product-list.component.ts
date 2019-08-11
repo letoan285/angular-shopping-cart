@@ -29,5 +29,15 @@ export class ProductListComponent implements OnInit {
     this.errors$ = this.store.pipe(select(fromProduct.getError));
 
   }
+  public deleteProduct(product: Product){
+    const cf = confirm("Ban co chac chan xoa phan pham nay ?");
+    if(cf){
+      this.confirmDeleteProduct(product);
+    }
+  }
+
+  confirmDeleteProduct(product: Product){
+    this.store.dispatch(new productAction.DeleteProduct(product.id));
+  }
 
 }
